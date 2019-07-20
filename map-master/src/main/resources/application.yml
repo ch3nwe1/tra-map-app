@@ -1,0 +1,7 @@
+# 服务配置
+server:
+  port: 8000
+
+#Spring配置
+spring:
+  profiles: dev
