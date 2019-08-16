@@ -1,7 +1,21 @@
 # 服务配置
 server:
-  port: 8000
+  port: 8080
 
 #Spring配置
 spring:
-  profiles: dev
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*" # 暴露所有监控端点。
+
+logging:
+  config: classpath:logback-spring.xml

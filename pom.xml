@@ -6,7 +6,7 @@
     <modules>
         <module>map-master</module>
 		<module>map-auth</module>
-		<module>map-generator</module>
+		<module>map-common</module>
 	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
@@ -18,10 +18,14 @@
 	<artifactId>tra-map-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tra-map-app</name>
-	<description>Demo project for Spring Boot</description>
+	<description>测绘系统</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<mybatis.version>2.0.0</mybatis.version>
+		<mysql.driver.version>5.1.38</mysql.driver.version>
+		<druid.version>1.1.19</druid.version>
+		<shiro.version>1.4.1</shiro.version>
 	</properties>
 
 	<dependencies>
@@ -39,6 +43,50 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid.version}</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.driver.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
+		<!--<dependency>-->
+			<!--<groupId>org.apache.shiro</groupId>-->
+			<!--<artifactId>shiro-spring</artifactId>-->
+			<!--<version>${shiro.version}</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring-boot-web-starter</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.ws/spring-ws-core -->
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-ws-core</artifactId>
+			<version>3.0.7.RELEASE</version>
+		</dependency>
+
+
+
 	</dependencies>
 
 	<build>

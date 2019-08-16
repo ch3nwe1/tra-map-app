@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.map.common.mapper.system.AuthUserMapper">
+
+    <select id="getUserByKey" parameterType="long" resultType="com.map.common.entity.system.AuthUser">
+        select * from auth_user where id = #{id}
+    </select>
+
+    <select id="getUserByCode" parameterType="string" resultType="com.map.common.entity.system.AuthUser">
+        select * from auth_user where code = #{code}
+    </select>
+
+    <insert id="insertUser" keyProperty="id" parameterType="com.map.common.entity.system.AuthUser" flushCache="true" useGeneratedKeys="true">
+        insert into auth_user (id, code, name, password, salt, picture, email, phone, create_user, create_time, update_user, update_time)
+        values (#{id}, #{code}, #{name}, #{password}, #{salt}, #{picture}, #{email}, #{phone},
+        #{createUser}, #{createTime}, #{updateUser}, #{updateTime})
+    </insert>
+
+    <delete id="deleteUser" parameterType="long" flushCache="true">
+        delete from auth_user where id = #{id}
+    </delete>
+</mapper>
